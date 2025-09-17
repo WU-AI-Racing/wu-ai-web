@@ -1,9 +1,9 @@
 # Setup
-title:               WashU Autonomous Racing (WUAIR)
-tagline:             'Project Portfolio'
+title:               "WUAIR"
+tagline:             "WashU Autonomous Racing"
 description:         ''
-url:                 https://wu-ai-racing.github.io/wu-ai-web/
-baseurl:             ''
+url:                 "https://wu-ai-racing.github.io"
+baseurl:             "/wu-ai-web"
 paginate:            5
 permalink:           pretty
 

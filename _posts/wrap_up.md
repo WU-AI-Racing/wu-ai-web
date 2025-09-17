@@ -1,18 +1,31 @@
 ---
 layout: post
-title: Interactive installation (Kemper Art Museum, St. Louis, MO)
+title: Competition
 ---
 
-<p> I designed and developed an interactive audio installation that generates unique, original music for each user through a system of large, custom-fabricated switches. Flipping the switches triggers Markov Models trained on MIDI music, which determine the instruments' note choices, durations, and velocities. I used several MIDI compositions as reference data to ensure a dynamic and cohesive musical experience.
-The installation integrates hardware and software with an Arduino microcontroller, which communicates with Max8 to control the instruments and generate real-time audio. </p>
+After we complete our final solution, we will step out of the simulator and travel to the Silverstone F1 track in the UK to compete in FSUK in late July.  
+There, we will rush to integrate our software and rapidly fix and debug any issues that arise during integration.  
 
-<figure style="text-align: center;">
-  <video controls 
-         style="width:100%; height:auto;">
-    <source src="https://dayan-parker.github.io/dayanparker/images/demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <figcaption style="margin-top: 10px; font-style: italic; color: #555;">
-    Interactive Installation Demo
-  </figcaption>
-</figure>
+After long days working on the car, students will have the opportunity to socialize with other teams at the campsite, visit the F1 museum, and watch car testing at Silverstone.  
+Accommodation will be provided at the campsite on the Silverstone track.  
+
+It is an amazing experience—both fun and challenging work—so please come if you are able!
+
+<div style="display: flex; gap: 10px; justify-content: center;">
+  <figure style="flex: 1; text-align: center;">
+    <img src="/images/ft_team.png" alt="Formula Trinity at FSUK" style="width:100%; height:auto;">
+    <figcaption style="margin-top: 10px; font-style: italic; color: #555;">
+      Formula Trinity at FSUK 2025
+    </figcaption>
+  </figure>
+</div>
+
+
+<div style="text-align: center; margin-top: 30px;">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaLW1xDfzf-eGhkhM6brzdf_d826QEOz35_zFse6D7-mIoMA/viewform" 
+     style="display: inline-block; padding: 12px 24px; background-color: #007acc; color: white; 
+            font-size: 1.5em; border-radius: 8px; text-decoration: none; font-weight: bold;">
+    Apply Today!
+  </a>
+</div>
+
