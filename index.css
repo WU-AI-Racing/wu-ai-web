@@ -232,6 +232,15 @@ body {
 .container section {
     margin:8vh 0px;
 }
+.team-img {
+    width: 300px;       /* fixed width for consistency */
+    height: 200px;      /* fixed height */
+    object-fit: cover;  /* crops images without distortion */
+    margin: 10px;
+    border-radius: 8px; /* optional: rounded corners */
+}
+
+
 #used div{
     font-size:14px !important;
     display:inline-block;
