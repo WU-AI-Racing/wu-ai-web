@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WashU Autonomous Racing</title>
+    <link rel="icon" type="image" href="./assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="box">
+        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay: 1700ms;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay: 1800ms;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay: 1900ms;"></div>
+        <div class="box2 animated bounceOutRight" style="animation-delay: 1900ms;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay: 1800ms;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay: 1700ms;"></div>
+    </div>
+    <div id="nav">
+        <a id="about" onclick="showabout()">about</a>
+        <a id="applications" onclick="showapplications()">applications</a>
+        <a id="work" onclick="showwork()">work</a>
+        <a id="contact" onclick="showcontact()">contact</a>
+        <a id="projects" onclick="showprojects()">projects</a>
+    </div>
+    
+    <!-- <a id="applications" onclick="showapplications()" class="animated fadeIn" style="animation-delay: 1000ms;">applications</a>
+    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay: 1000ms;">about</a>
+    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay: 1000ms;">work</a>
+    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay: 1000ms;">contact</a>
+    <a id="projects" onclick="showprojects()" class="animated fadeIn" style="animation-delay: 1000ms;">projects</a>
+    <div id="middle" class="animated slideInDown" style="animation-delay: 2000ms;"> -->
+        <h1>WUAIR.</h1>
+        <h2>Using AI, algorithms, and sensor to autonomously drive formula style cars</h2>
+        <div id="menu">
+            <a onclick="showabout()">about</a>
+            <a onclick="showapplications()">applications</a>
+            <a onclick="showwork()">work</a>
+            <a onclick="showcontact()">contact</a>
+            <a onclick="showprojects()">projects</a>
+        </div>
+        <table>
+            <tr>
+                <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social"
+                        href="https://www.linkedin.com/in/thekaushikgoswami"><i class="fab fa-linkedin"></i></a></td>
+                <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social"
+                        href="https://twitter.com/Being_Goswami"><i class="fab fa-twitter"></i></a></td>
+                <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social"
+                        href="https://instagram.com/thekaushikgoswami"><i class="fab fa-instagram"></i></a></td>
+                <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social"
+                        href="https://github.com/TheKaushikGoswami"><i class="fab fa-github"></i></a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="projects_container" class="container">
+        <div onclick="closeprojects()"><i class="fas fa-angle-right"></i></div>
+        <h1>projects.</h1>
+        <section>
+            <h2>my work</h2>
+            <p>
+                Here are some of the projects I've worked on recently. Feel free to explore:
+            </p>
+            <ul>
+                <div class="project_card">
+                    <div class="project_info">
+                        <h3>Portfolio</h3>
+                        <p>The Open-Source code for the Personal Portfolio this website is coming from! A minimal and
+                            ambient portfolio template for Developers! ⚡</p>
+                        <button class="btn_one"><a
+                                href="https://github.com/TheKaushikGoswami/thekaushikgoswami.github.io"
+                                style="color: inherit; text-decoration: none"> View Project </a></button>
+                    </div>
+                </div>
+                <div class="project_card">
+                    <div class="project_info">
+                        <h3>Olympus</h3>
+                        <p>An Application commands-based multi-purpose discord bot that can do most of the things that
+                            you require for your discord server.</p>
+                        <button class="btn_one"><a href="https://github.com/TheKaushikGoswami/Olympus"
+                                style="color: inherit; text-decoration: none"> View Project </a></button>
+                    </div>
+                </div>
+                <div class="project_card">
+                    <div class="project_info">
+                        <h3>Modmail Bot</h3>
+                        <p>A simple and efficient discord modmail bot written in Python language, using library named
+                            discord.py without any databse integration.</p>
+                        <button class="btn_one"><a href="https://github.com/TheKaushikGoswami/lyq-hangout-modmail"
+                                style="color: inherit; text-decoration: none"> View Project </a></button>
+                    </div>
+                </div>
+                <div class="project_card">
+                    <div class="project_info">
+                        <h3>100 Days, 100 Programs</h3>
+                        <p>An exhilarating journey of 100 Days, 100 Programs challenge, where I explore various programming languages and frameworks to build a diverse collection of practical applications. 🚀</p>
+                        <button class="btn_one"><a href="https://github.com/TheKaushikGoswami/100-Days-100-Programs"
+                                style="color: inherit; text-decoration: none"> View Project </a></button>
+                    </div>
+                </div>
+            </ul>
+        </section>
+    </div>
+    <div id="work_container" class="container">
+        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+        <h1>work.</h1>
+        <section>
+            <h2></h2>
+            <p>
+                Welcome! I'm Kaushik Goswami, a passionate professional specializing in Web Designing, Python
+                Programming, Graphic Designing, and Content Writing. With 2 years of personal experience, I bring fresh
+                and innovative solutions to every project. From visually appealing websites to efficient Python programs
+                and captivating graphics, I deliver high-quality work that exceeds expectations. Let's collaborate and
+                create remarkable digital experiences. Explore my LinkedIn page for samples and connect to discuss your
+                project.
+            </p>
+            <div id="used">
+                <div><i class="fas fa-circle"></i>&nbsp;Web Designing</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Content Writing</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Graphic Designing</div>
+            </div>
+            <button class="btn_one"><a href="./assets/Kaushik_Resume.pdf" target="_blank"
+                    style="color: inherit; text-decoration: none">View
+                    Resume</a></button>
+        </section>
+    </div>
+    <div id="about_container" class="container">
+        <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+        <h1>about.</h1>
+    
+        <!-- Background -->
+        <section>
+            <h2>background</h2>
+            <p>
+                WashU has the chance to participate in <strong>Formula Student AI</strong>, the autonomous driving competition held at the
+                Silverstone Track in the UK. We are seeking ambitious students to collaborate on this complex project. Through this, 
+                you can expect to learn cutting-edge AI and robotics concepts.
+            </p>
+            <p>
+                Instead of building a car from scratch, we will design a <strong>sensor and software stack</strong> to drive a car that IMechE provides—
+                capable of exceeding 80 mph—to race around a track as quickly as possible.
+            </p>
+        </section>
+    
+        <!-- Our Teams -->
+        <section>
+            <h2>our teams</h2>
+            <p>Our software stack will be split into four parts, and we need students to support each division:</p>
+    
+            <h3>Perception</h3>
+            <ul>
+                <li>Process data from sensors like depth cameras, LiDARs, and GPS to extract track borders.</li>
+                <li>Create ML-based computer vision algorithms using tools like YOLO and LiDAR point cloud clustering.</li>
+                <li>Make high-level decisions about sensor fusion to maximize speed.</li>
+            </ul>
+    
+            <h3>State Estimation</h3>
+            <ul>
+                <li>Map track data from perception and position it relative to the car.</li>
+                <li>Use SLAM techniques like Kalman filters for accurate localization.</li>
+                <li>Integrate GPS with local positioning for robust performance.</li>
+            </ul>
+    
+            <h3>Path Planning</h3>
+            <ul>
+                <li>Generate optimal trajectories using data from perception and state estimation.</li>
+                <li>Implement optimization algorithms to minimize steering angles and respect friction limits.</li>
+                <li>Explore advanced planning methods such as RRT and evolutionary algorithms.</li>
+            </ul>
+    
+            <h3>Control</h3>
+            <ul>
+                <li>Steer the car along the planned path using algorithms like pure pursuit.</li>
+                <li>Implement PID motor control for stable acceleration and braking.</li>
+                <li>Interpret state estimation instructions to start/stop reliably.</li>
+            </ul>
+    
+            <h3>Business Operations</h3>
+            <ul>
+                <li>Manage logistics for international competition: flights, visas, and accommodations.</li>
+                <li>Coordinate fundraising, sponsorships, and university support.</li>
+                <li>Handle communications, scheduling, documentation, and outreach.</li>
+            </ul>
+        </section>
+    
+        <!-- Competition -->
+        <section>
+            <h2>competition</h2>
+            <p>
+                We will be flying to the UK to compete in <strong>Formula Student UK (FSUK)</strong> in late July. 
+                Accommodation will be provided at the campsite on the Silverstone track.
+            </p>
+            <p>
+                This competition is not only amazing fun but also challenging work—an incredible opportunity to apply
+                engineering skills in a high-stakes international event. Come join us if you are able!
+            </p>
+        </section>
+    
+        <!-- Join Now -->
+        <section>
+            <h2>join now</h2>
+            <p>
+                Interested in joining WashU AI Racing? Fill out our interest form here: <br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaLW1xDfzf-eGhkhM6brzdf_d826QEOz35_zFse6D7-mIoMA/viewform?usp=sharing&ouid=105080887299300401065" target="_blank">
+                    WashU AI Racing Interest Form
+                </a>
+            </p>
+        </section>
+    </div>
+    
+    <div id="contact_container" class="container">
+        <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+        <h1>contact.</h1>
+    
+        <!-- Direct Contacts -->
+        <section>
+            <h2>get in touch</h2>
+            <p>
+                Captain: <strong>Dayan Parker</strong><br>
+                📞 (215)-678-1603<br>
+                📧 <a href="mailto:d.b.parker@wustl.edu">d.b.parker@wustl.edu</a><br>
+                <em>Feel free to send questions!</em>
+            </p>
+        </section>
+    </div>
+
+    <div id="applications_container" class="container">
+        <div onclick="closeapplications()"><i class="fas fa-angle-up"></i></div>
+        <h1>applications.</h1>
+    
+        <section>
+            <h2>apply to join washU AI Racing</h2>
+            <p>
+                We’re recruiting motivated students to join our team! Whether your interests are in AI, robotics, 
+                control systems, or logistics, there’s a place for you in WashU AI Racing.
+            </p>
+            <p>
+                Fill out the application form below to get started:
+            </p>
+            <p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaLW1xDfzf-eGhkhM6brzdf_d826QEOz35_zFse6D7-mIoMA/viewform?usp=sharing&ouid=105080887299300401065" 
+                   target="_blank" class="btn_one">
+                   Apply Now
+                </a>
+            </p>
+        </section>
+    </div>
+    
+    
+    <div id="footer">
+        See you at the track!!<br>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
