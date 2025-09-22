@@ -107,19 +107,25 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent bar */
+    padding: 10px 0;
     z-index: 10;
-    background: transparent;
-    padding: 15px 0;
-}
-
-#nav a {
-    font-size: 20px;
+  }
+  
+  #nav a {
     color: #fff;
+    font-size: 18px;
     text-decoration: none;
-    transition: 0.3s;
-}
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  
+  #nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
 
 /* #about {
     width:10vw;
@@ -370,46 +376,60 @@ body {
 	color: #fff;
 	background: rgb(255, 50, 50);
 }
-
 @media (max-width: 800px){ 
-    #projects {
-        display:none;
-    }
-    #about {
-        display:none;
-    }
-    #contact {
-        display:none;
-    }
+    /* Hide the corner nav buttons */
+    #projects,
+    #about,
+    #contact,
     #work {
         display:none;
     }
+
+    /* Center footer on small screens */
     #footer {
         text-align:center;
+        font-size:14px; /* slightly smaller for mobile */
     }
+
+    /* Make middle section narrower for small screens */
     #middle {
         width:90vw;
         padding:0px 5vw;
     }
+
+    /* Resize the social icons table */
     #middle table {
         width:80%;
     }
-    .container form input {
-        width:90%;
-    }
+
+    /* Full width contact form */
+    .container form input,
     .container form textarea {
         width:90%;
     }
+
+    /* Show the mobile menu */
     #menu {
-        display:inline-block;
+        display:block;
+        text-align:center;
+        margin-top:20px;
     }
-    #onlywide {
+    #menu a {
+        display:block;          /* stack links vertically */
+        font-size:20px;         /* larger for finger tapping */
+        padding:12px 0;
+        color:#fff;
+        text-decoration:none;
+    }
+    #menu a:hover {
+        background: rgba(255,50,50,0.9);
+        border-radius:6px;
+    }
+
+    /* Don’t block taps with background animations */
+    #onlywide,
+    #box,
+    #particles-js {
         display:none !important;
-    }
-    .box2 {
-        margin-left:0px !important;
-    }
-    #box div {
-        width:100%;
     }
 }
