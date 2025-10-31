@@ -1,0 +1,95 @@
+---
+// src/layouts/Layout.astro
+
+// 1. Import your Header/Toolbar
+// (You called it 'Bar.astro' in your last index.astro file)
+import Header from '../components/Bar.astro';
+
+// 2. Import the background image (from your Welcome component)
+import background from '../assets/background_new.svg';
+
+// 3. Define props so each page can have a custom title
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+
+		<Header /> 
+		
+		<slot /> 
+
+	</body>
+</html>
+
+<style is:global>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        
+        /* ADD THIS to set the default text color */
+        color: #e5e7eb; /* A bright, light gray */
+    }
+
+    /* This background style is from your example */
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(2px);
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-top: 0.25em;
+        /* This will now inherit the light color from the body */
+    }
+    
+    h2 {
+        margin: 0 0 1em;
+        font-weight: normal;
+        color: #e5e7eb; /* CHANGED: A slightly dimmer light gray */
+        font-size: 20px;
+    }
+
+	h3 {
+        margin: 0 0 1em;
+        font-weight: normal;
+        color: #e5e7eb; /* CHANGED: A slightly dimmer light gray */
+        font-size: 20px;
+    }
+
+	h4 {
+        margin: 0 0 1em;
+        font-weight: normal;
+        color: #e5e7eb; /* CHANGED: A slightly dimmer light gray */
+        font-size: 20px;
+    }
+
+    p {
+        color: #e5e7eb; /* CHANGED: A softer gray for paragraph text */
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.006em;
+        margin: 0;
+    }
+</style>

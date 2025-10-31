@@ -1,0 +1,108 @@
+---
+// 1. Import your main layout
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About WUAIR">
+  <main>
+    <section id="hero">
+      <h2>Mission Statement</h2>
+      <p>
+        WashU AI Racing (WUAIR) is a dynamic and innovative organization
+        dedicated to providing students with hands-on experience in AI,
+        robotics, and autonomous systems. Our mission is to collaboratively
+        design and build a multi-disciplinary software stack to drive a
+        formula-style car autonomously, pushing students to solve real-world
+        engineering challenges in a large, structured team environment.
+      </p>
+
+      <h2>Background</h2>
+      <p>
+        WashU has the chance to participate in Formula Student AI, an
+        autonomous driving competition held at the Silverstone Track in the UK.
+        Unlike traditional Formula Student teams that design and build a car
+        from scratch, FSAI provides each team with a race car—capable of
+        reaching speeds over 80 mph. Our role will be to design and
+        implement the sensor suite and software stack that enable the vehicle
+        to autonomously navigate and race around the track as quickly and
+        safely as possible.
+      </p>
+      <p>
+        We are seeking ambitious and motivated students to collaborate on this
+        technically demanding project. By contributing, you will gain hands-on
+        experience with cutting-edge AI, robotics, and autonomous systems,
+        while working as part of a team solving real-world engineering
+        challenges.
+      </p>
+
+      <p>
+        To learn more about the technical details of our software stack,
+        <a href="/Teams">visit our Teams page</a>.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+      Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #hero {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    max-width: 70ch; /* Added this to make the text more readable */
+  }
+
+  /* Copied from your h1 style and applied to h2 */
+  h2 {
+    font-size: 22px;
+    margin-top: 1.5em; /* Added more space between sections */
+    margin-bottom: 0.25em;
+    font-weight: normal;
+    /* DELETED: color: #111827; */
+  }
+
+  h2:first-of-type {
+    margin-top: 0; /* No margin on the very first title */
+  }
+
+  p {
+    /* DELETED: color: #4b5563; */
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.006em;
+    margin: 0;
+    margin-bottom: 1em; /* Added space between paragraphs */
+  }
+
+  /* --- ADD THESE STYLES FOR THE LINK --- */
+  #hero a {
+    color: #3245ff; /* Use the blue from the gradient button */
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  #hero a:hover {
+    text-decoration: underline;
+  }
+  /* --- END OF NEW STYLES --- */
+
+  @media screen and (max-width: 768px) {
+    #hero {
+      display: block;
+      padding-top: 10%;
+    }
+
+    h2 {
+      line-height: 1.5;
+    }
+  }
+</style>

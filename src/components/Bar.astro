@@ -1,0 +1,100 @@
+---
+// 1. Get the current page's path
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <nav id="links">
+    <a class={currentPath === '/' ? 'button' : ''} href="/">Home</a>
+    <a class={currentPath === '/About' ? 'button' : ''} href="/About">About</a>
+    <a class={currentPath === '/Teams' ? 'button' : ''} href="/Teams">Teams</a>
+    <a class="{(currentPath === '/Members' ? 'button' : '')}" href="/Members"
+      >Members</a
+    >
+    <a class={currentPath === '/Contact' ? 'button' : ''} href="/Contact"
+      >Contact</a
+    >
+  </nav>
+</header>
+
+<style>
+  /* CLEANED: All extra CSS (for h1, h2, main, #container, etc.) 
+    has been removed. It was overriding your global styles.
+  */
+
+  /* This is the style for the <header> element itself */
+  header {
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+      Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center the nav links */
+    align-items: center;
+    padding: 0.5rem 10rem;
+    background: rgba(17, 17, 17, 0.8); /* Dark, slightly transparent background */
+    border-bottom: 1px solid #333; /* Subtle border */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  #links {
+    display: flex;
+    gap: 16px;
+  }
+
+  /* --- THIS IS THE FIX --- */
+  #links a {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    color: #e5e7eb; /* CHANGED: Set to light gray */
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 10px;
+  }
+
+  /* --- THIS IS ALSO FIXED --- */
+  #links a:not(.button):hover {
+    color: #ffffff; /* CHANGED: Brighter white on hover */
+    background-color: #374151; /* CHANGED: Dark gray background on hover */
+  }
+
+  #links a svg {
+    height: 1em;
+    margin-left: 8px;
+  }
+
+  /* This is your (active) button style */
+  #links a.button {
+    color: white;
+    background: linear-gradient(85deg, #000000 40%, #cc0000 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+  }
+
+  /* This is your (active) button hover style */
+  #links a.button:hover {
+    color: rgb(230, 230, 230);
+    background: linear-gradient(85deg, #000000 50%, #cc0000 100%);
+    box-shadow: none;
+  }
+
+  /* --- Mobile styles for the header --- */
+  @media screen and (max-width: 768px) {
+    header {
+      padding: 1rem;
+    }
+
+    #links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #links a.button {
+      padding: 14px 18px;
+    }
+  }
+</style>

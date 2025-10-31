@@ -1,0 +1,201 @@
+---
+// src/pages/members.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Our Team">
+  <main>
+    <section id="hero">
+      
+      <!-- Page Title -->
+      <h2>Meet the Team</h2>
+
+      <!-- Faculty Advisor Section -->
+      <section>
+        <h3>Faculty Advisor</h3>
+        <div class="member-card advisor-card">
+          <img 
+            src="/kantaros.jpg" 
+            alt="Faculty Advisor Headshot" 
+          />
+          <h4>Dr. Ioannis (Yiannis) Kantaros </h4>
+          <p class="member-title">Faculty Advisor</p>
+        </div>
+      </section>
+      
+      <!-- Leadership Section -->
+      <section>
+        <h3>Leadership</h3>
+        <div class="member-grid">
+          <!-- Captain Card -->
+          <div class="member-card">
+            <img 
+              src="/dayan.jpg" 
+              alt="Team Captain Headshot" 
+            />
+            <h4>Dayan Parker</h4>
+            <p class="member-title">Team Captain</p>
+          </div>
+          
+          <!-- Team Leads Cards -->
+          <div class="member-card">
+            <img 
+              src="/eugene.jpg" 
+              alt="Perception Lead Headshot" 
+            />
+            <h4>Eugene Joo</h4>
+            <p class="member-title">Perception Lead</p>
+          </div>
+          
+          <div class="member-card">
+            <img 
+              src="/amelia.jpg" 
+              alt="State Estimation Lead Headshot" 
+            />
+            <h4>Amelia Hines</h4>
+            <p class="member-title">State Estimation Lead</p>
+          </div>
+          
+          <div class="member-card">
+            <img 
+              src="/sophie.png" 
+              alt="Path Planning Lead Headshot" 
+            />
+            <h4>Sophie Hildebrandt</h4>
+            <p class="member-title">Path Planning Lead</p>
+          </div>
+
+          <div class="member-card">
+            <img 
+              src="/pavly.jpg" 
+              alt="Controls Lead Headshot" 
+            />
+            <h4>Pavly Yousef</h4>
+            <p class="member-title">Controls Lead</p>
+          </div>
+
+          <!-- <div class="member-card">
+            <img 
+              src="/pavly.jpg" 
+              alt="Business Lead Headshot" 
+            />
+            <h4>[Lead Name]</h4>
+            <p class="member-title">Business Lead</p>
+          </div>
+        </div> -->
+      </section>
+
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    max-width: 90ch; /* Wider max-width for a grid */
+    width: 90%;
+  }
+
+  /* Page Title (h2) is styled globally */
+  h2 {
+    text-align: center;
+    font-size: 2rem; /* A bit bigger for a main title */
+  }
+
+  /* Section Titles (h3) */
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    /* color: #e5e7eb; */ /* Inherits light color from layout */
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Grid for team members */
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Individual member card */
+  .member-card {
+    background-color: #1a1a1a; /* Dark card background */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Special card for the advisor */
+  .advisor-card {
+    max-width: 350px;
+    margin: 0 auto; /* Center the advisor card */
+  }
+
+  /* --- THIS IS THE FIX ---
+    This CSS makes all headshots responsive circles 
+  */
+  .member-card img {
+    /* 1. Set width relative to the card */
+    width: 80%; 
+    margin-left: auto; /* Center the image */
+    margin-right: auto; /* Center the image */
+
+    /* 2. Force a 1:1 square aspect ratio */
+    aspect-ratio: 1 / 1;
+
+    /* 3. Make it a circle */
+    border-radius: 50%;
+    
+    /* 4. Prevent stretching/distortion */
+    object-fit: cover; 
+
+    /* 5. Styling */
+    border: 3px solid #444;
+    margin-bottom: 1rem;
+    background-color: #333; /* Placeholder bg */
+  }
+
+  /* Member Name (h4) */
+  .member-card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    /* color: #f3f4f6; */ /* Inherits light color */
+    margin: 0.5rem 0 0.25rem 0;
+  }
+
+  /* Member Title (p) */
+  .member-card .member-title {
+    font-size: 1rem;
+    /* color: #a1a1aa; */ /* Inherits light color */
+    margin: 0;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 600px) {
+    .advisor-card {
+      max-width: 100%;
+    }
+    
+    .member-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+</style>
