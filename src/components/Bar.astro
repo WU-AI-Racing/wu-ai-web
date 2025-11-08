@@ -38,6 +38,13 @@ const currentPath = Astro.url.pathname;
     z-index: 10;
   }
 
+@supports (-webkit-touch-callout: none) {
+  header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
   #links {
     display: flex;
     gap: 16px;
