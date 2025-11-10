@@ -184,5 +184,12 @@
 	  h1 {
 		line-height: 1.5;
 	  }
+
 	}
+/* more IOS shenanigans, so backdrop image is visible */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    background-color: transparent !important;
+  }
+}
   </style>
