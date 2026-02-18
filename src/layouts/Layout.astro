@@ -94,6 +94,18 @@ const { title } = Astro.props;
         letter-spacing: -0.006em;
         margin: 0;
     }
+    /* Add this to the bottom of your style block */
+  .advisor-card {
+    margin-top: 1rem;
+    text-align: center; /* Centers the image and text */
+  }
+
+  .advisor-card img {
+    max-width: 200px; /* Control the width here (e.g., 150px or 200px) */
+    width: 100%;      /* responsive width */
+    height: auto;     /* Maintains aspect ratio so it doesn't stretch */
+    border-radius: 8px; /* Optional: rounds the corners slightly */
+  }
 
   header {
   position: relative;
