@@ -4,14 +4,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact Us">
-  
   <main>
     <section id="hero">
 
-        <section class="sponsor-section">
+      <section class="sponsor-section">
         <h2>Sponsors</h2>
         
-
         <p>
           WashU AI Racing relies on the generosity of our partners to push the boundaries of robotics and engineering. We are actively seeking sponsors to support our hardware, logistics, and competition efforts.
         </p>
@@ -23,17 +21,28 @@ import Layout from '../layouts/Layout.astro';
           <a href="mailto:d.b.parker@wustl.edu?subject=WashU%20AI%20Racing%20Sponsorship%20Inquiry" class="button">
             Become a Sponsor
           </a>
-          </div>
+        </div>
+
+        <h3 class="subsection-header">Current Partners</h3>
+        <div class="sponsor-grid">
+            <div class="sponsor-card">
+              <a href="https://www.ipg-automotive.com/" target="_blank">
+                <img src="/IPG-Automotive-Logo-RGB - Copy.png" alt="IPG Automotive" />
+              </a>
+              <h4>IPG Automotive</h4>
+            </div>
+
+            </div>
+
       </section>
 
-
-        <section>
+      <section>
         <h2>Get in Touch</h2>
         
         <p>
           <strong>Club Instagram:</strong><br />
           <a class="social-link" href="https://www.instagram.com/washu_ai_racing/" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -48,8 +57,6 @@ import Layout from '../layouts/Layout.astro';
           📧 <a href="mailto:d.b.parker@wustl.edu">d.b.parker@wustl.edu</a><br />
           <em>Feel free to send personal questions!</em>
         </p>
-
-        
       </section>
 
       <section>
@@ -92,6 +99,7 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     padding: 16px;
     max-width: 70ch; /* Keeps text readable */
+    width: 100%;
   }
 
   h2 {
@@ -99,7 +107,6 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 1.5em;
     margin-bottom: 0.25em;
     font-weight: normal;
-    /* DELETED: color: #111827; */
   }
 
   h2:first-of-type {
@@ -107,7 +114,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   p {
-    /* DELETED: color: #4b5563; */
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.006em;
@@ -117,30 +123,21 @@ import Layout from '../layouts/Layout.astro';
 
   /* --- Styles for this page --- */
 
-  /* Style the contact info block */
   p strong {
-    /* DELETED: color: #111827; */
     font-weight: 600;
   }
 
-  p em {
-    /* DELETED: color: #6b7280; */
-    /* You can optionally add a lighter color here if you want */
-    /* color: #9ca3af; */ 
-  }
-
-  /* Style the email link (and other text links) */
-  #hero a:not(.button) {
-    color: #3245ff; /* This blue should be fine on a dark background */
+  #hero a:not(.button):not(.social-link) {
+    color: #3245ff;
     text-decoration: none;
     font-weight: 500;
   }
 
-  #hero a:not(.button):hover {
+  #hero a:not(.button):not(.social-link):hover {
     text-decoration: underline;
   }
   
-  /* Added the social-link styles from our previous chat */
+  /* Social Link Styles */
   .social-link {
     display: inline-flex;
     align-items: center;
@@ -154,12 +151,8 @@ import Layout from '../layouts/Layout.astro';
   .social-link:hover {
     text-decoration: underline;
   }
-
-  .social-link svg {
-    stroke: currentColor;
-  }
   
-  /* --- Button style (copied from teams.astro) --- */
+  /* Button style */
   .button {
     display: inline-block;
     padding: 12px 18px;
@@ -176,7 +169,58 @@ import Layout from '../layouts/Layout.astro';
   .button:hover {
     color: rgb(230, 230, 230);
     box-shadow: none;
-    transform: translateY(1px); /* Simple press effect */
+    transform: translateY(1px);
+  }
+
+  /* --- NEW SPONSOR GRID STYLES --- */
+  .subsection-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #888; /* Slightly muted header */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sponsor-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many 180px cards as possible */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .sponsor-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .sponsor-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .sponsor-card img {
+    width: 100%;
+    aspect-ratio: 3/2; /* Rectangular aspect ratio for logos */
+    object-fit: contain;
+    background-color: white; /* White bg to make logos pop */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .sponsor-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0 0;
+    color: #f3f4f6;
   }
 
   /* --- Mobile styles --- */

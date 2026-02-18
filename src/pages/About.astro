@@ -33,12 +33,30 @@ import Layout from '../layouts/Layout.astro';
         experience with cutting-edge AI, robotics, and autonomous systems,
         while working as part of a team solving real-world engineering
         challenges.
-      </p>
-
+      </p>      
       <p>
         To learn more about the technical details of our software stack,
         <a href="/Teams">visit our Teams page</a>.
       </p>
+      
+      <h2>Sponsors</h2>
+      <p>
+        To perform at the peak of autonomous racing, WUAIR thanks its sponsors for
+        helping to provide the necessary resources. 
+      </p>
+      
+      <section>
+        <h3>Key Partners</h3> 
+        <div class="member-card advisor-card">
+          <img 
+            src="/ipg-logo" 
+            alt="IPG Automotive Logo" 
+          />
+          <h4><a href="https://www.ipg-automotive.com/">IPG Automotive</a></h4>
+          <p class="member-title">IPG</p>
+        </div>
+      </section>
+
     </section>
   </main>
 </Layout>
@@ -58,34 +76,30 @@ import Layout from '../layouts/Layout.astro';
     flex-direction: column;
     justify-content: center;
     padding: 16px;
-    max-width: 70ch; /* Added this to make the text more readable */
+    max-width: 70ch;
   }
 
-  /* Copied from your h1 style and applied to h2 */
   h2 {
     font-size: 22px;
-    margin-top: 1.5em; /* Added more space between sections */
+    margin-top: 1.5em;
     margin-bottom: 0.25em;
     font-weight: normal;
-    /* DELETED: color: #111827; */
   }
 
   h2:first-of-type {
-    margin-top: 0; /* No margin on the very first title */
+    margin-top: 0;
   }
 
   p {
-    /* DELETED: color: #4b5563; */
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.006em;
     margin: 0;
-    margin-bottom: 1em; /* Added space between paragraphs */
+    margin-bottom: 1em;
   }
 
-  /* --- ADD THESE STYLES FOR THE LINK --- */
   #hero a {
-    color: #3245ff; /* Use the blue from the gradient button */
+    color: #3245ff;
     text-decoration: none;
     font-weight: 500;
   }
@@ -93,7 +107,6 @@ import Layout from '../layouts/Layout.astro';
   #hero a:hover {
     text-decoration: underline;
   }
-  /* --- END OF NEW STYLES --- */
 
   @media screen and (max-width: 768px) {
     #hero {
